@@ -5,8 +5,6 @@ import com.mateuszjanczak.blooddonationsystem.domain.BloodType;
 import com.mateuszjanczak.blooddonationsystem.repository.BloodRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class BloodService implements IBloodService {
 
@@ -17,7 +15,7 @@ public class BloodService implements IBloodService {
     }
 
     @Override
-    public Blood findByBloodType(BloodType bloodType){
+    public Blood findById(BloodType bloodType){
         return bloodRepository.findById(bloodType).orElse(null);
     }
 }

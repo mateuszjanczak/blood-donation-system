@@ -6,18 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Blood {
+public class Donor {
     @Id
-    @Enumerated(EnumType.STRING)
-    BloodType bloodType;
+    Long id;
+    String firstName;
+    String lastName;
 
-    @OneToMany
-    List<Donor> donors;
+    @ManyToOne
+    Blood blood;
 }
