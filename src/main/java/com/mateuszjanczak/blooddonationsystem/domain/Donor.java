@@ -17,6 +17,7 @@ public class Donor {
     Long id;
     String firstName;
     String lastName;
+    String pesel;
 
     @ManyToOne
     Blood blood;
