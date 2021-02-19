@@ -6,38 +6,32 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Donor {
+public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String firstName;
-    String lastName;
 
-    @Column(unique = true)
-    String pesel;
+    @ManyToOne
+    Donor donor;
 
     @ManyToOne
     Blood blood;
 
-    @OneToMany(mappedBy = "donor")
-    List<Report> reports;
+    int amount;
 
     @Override
     public String toString() {
-        return "Donor{" +
+        return "Report{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", pesel='" + pesel + '\'' +
+                ", donor=" + donor +
                 ", blood=" + blood +
-                ", reports=" + reports.size() +
+                ", amount=" + amount +
                 '}';
     }
 }

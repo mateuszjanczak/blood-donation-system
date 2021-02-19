@@ -15,7 +15,7 @@ public class BloodService implements IBloodService {
     }
 
     @Override
-    public Blood findById(BloodType bloodType){
+    public Blood findById(BloodType bloodType) {
         return bloodRepository.findById(bloodType).orElse(null);
     }
 }

@@ -16,8 +16,23 @@ import java.util.List;
 public class Blood {
     @Id
     @Enumerated(EnumType.STRING)
-    BloodType bloodType;
+    BloodType type;
 
-    @OneToMany
+    @OneToMany(mappedBy = "blood")
     List<Donor> donors;
+
+    @OneToMany(mappedBy = "blood")
+    List<Report> reports;
+
+    public Blood(BloodType bloodType) {
+    }
+
+    @Override
+    public String toString() {
+        return "Blood{" +
+                "type=" + type +
+                ", donors=" + donors.size() +
+                ", reports=" + reports.size() +
+                '}';
+    }
 }

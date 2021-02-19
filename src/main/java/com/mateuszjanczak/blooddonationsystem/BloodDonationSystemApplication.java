@@ -22,28 +22,28 @@ public class BloodDonationSystemApplication {
         return args -> bloodRepository.saveAll(
                 Arrays.asList(
                         Blood.builder()
-                                .bloodType(BloodType.A_PLUS)
+                                .type(BloodType.A_PLUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.A_MINUS)
+                                .type(BloodType.A_MINUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.AB_PLUS)
+                                .type(BloodType.AB_PLUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.AB_MINUS)
+                                .type(BloodType.AB_MINUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.B_PLUS)
+                                .type(BloodType.B_PLUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.B_MINUS)
+                                .type(BloodType.B_MINUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.O_PLUS)
+                                .type(BloodType.O_PLUS)
                                 .build(),
                         Blood.builder()
-                                .bloodType(BloodType.O_MINUS)
+                                .type(BloodType.O_MINUS)
                                 .build()
                 )
         );
